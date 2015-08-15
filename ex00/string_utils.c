@@ -6,7 +6,7 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 18:34:02 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/15 18:37:22 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/15 23:06:31 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,14 @@ int		ft_strlen(char *str)
 		c++;
 	}
 	return (c + 1);
+}
+
+int		*ft_get_int_array_from_string(char *str)
+{
+	/* retourne un tableau d'entier a partir de la string
+	 * transforme les points en 0,
+	 * verifie les caractères de la string
+	 * check si la ligne est valide avec ft_check_line
+	 * retourne 0 si il y a eu une erreur.
+	 */
 }
