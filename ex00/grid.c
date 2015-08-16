@@ -6,7 +6,7 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 22:34:56 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 14:40:25 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/16 15:55:13 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ void	ft_init_blocks(int *lines[], t_grid *grid)
 		{
 			block = ft_get_block_of(col, lin);
 			case_in_block = (x % 3) + 3 * (y % 3);
+			grid->blocks[block][case_in_block] = &(lines[lin + 1][col]);
+			col++;
 		}
 		lin++;
 	}
