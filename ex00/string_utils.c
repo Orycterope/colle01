@@ -6,7 +6,7 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 18:34:02 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 21:37:06 by kguillot         ###   ########.fr       */
+/*   Updated: 2015/08/16 21:46:15 by kguillot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	ft_print_grid(struct s_grid *grid)
 			write(1, " ", 1);
 			b++;
 		}
+		write(1, "127", 1);
 		write(1, "\n", 1);
 		b = 0;
 		i++;
