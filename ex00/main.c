@@ -6,7 +6,7 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 20:01:16 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 18:20:36 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/16 19:29:11 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "main.h"
 #include "check.h"
 #include "precheck.h"
+#include <stdio.h>
 
 int		fill_grid(struct s_grid *grid, int x, int y)
 /* remplie la grille par recurence
@@ -27,21 +28,27 @@ int		fill_grid(struct s_grid *grid, int x, int y)
 	int value;
 	int next_x;
 	int next_y;
-
-	if (x == 9 && y == 8)
+	
+	printf("COORD : x : %d, y : %d\n", x, y);
+	//ft_putchar('a');	
+	if (y == 9)
 		return (1);
 	next_x = x + 1;
-	next_y = y + 1;
+	next_y = y;
 	if (next_x == 9)
 	{
 		next_x = 0;
 		next_y++;
 	}
-	if (*(grid->lines[y][x]) != 0)
+	//ft_putchar('b');	
+	if (*(grid->lines[y][x]) != '0')
+		printf("-----------> occupied case : %c\n", *(grid->lines[y][x]));
 		return (fill_grid(grid, next_x, next_y));
-	value = 1;
-	while (value <= 9)
+	//ft_putchar('c');	
+	value = '1';
+	while (value <= '9')
 	{
+		printf("--> COORD : x : %d, y : %d, value : %c\n", x, y, value);
 		*(grid->lines[y][x]) = value;
 		if (ft_check_case(x, y, grid) == 1)
 			if (fill_grid(grid, next_x, next_y) == 1)
@@ -64,12 +71,14 @@ int		main(int argc, char *argv[])
 
 	if (ft_precheck(argc, argv) == 0)
 	{
+		ft_putstr("\nPRECHECK\n");
 		ft_error();
 		return (0);
 	}
 	grid = ft_create_grid(argv);
 	if (fill_grid(grid, 0, 0) == 0)
 	{
+		ft_putstr("\nFILLGRID\n");
 		ft_error();
 		return (0);
 	}

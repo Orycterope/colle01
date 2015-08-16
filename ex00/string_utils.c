@@ -6,16 +6,15 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 18:34:02 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 18:00:02 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/16 18:59:29 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "string_utils.h"
 
-int		ft_putchar(char	c)
+void	ft_putchar(char	c)
 {
 	write(1, &c, 1);
-	return 0;
 }
 
 void	ft_putstr(char *str)
@@ -42,7 +41,7 @@ int		ft_strlen(char *str)
 	return (c + 1);
 }
 
-int		ft_print_grid(struct s_grid *grid)
+void	ft_print_grid(struct s_grid *grid)
 {
 	int i;
 	int b;
@@ -53,7 +52,7 @@ int		ft_print_grid(struct s_grid *grid)
 	{
 		while (b < 9)
 		{
-			write (1, &grid[i][b], 1);
+			write (1, grid->lines[i][b], 1);
 			write (1, " ", 1);
 			b++;
 		}
@@ -61,5 +60,4 @@ int		ft_print_grid(struct s_grid *grid)
 		b = 0;
 		i++;
 	}
-	return (0);
 }

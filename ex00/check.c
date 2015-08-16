@@ -6,13 +6,13 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 20:14:24 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 18:07:15 by tbarrier         ###   ########.fr       */
+/*   Updated: 2015/08/16 18:55:39 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "grid.h"
 
-int ft_check_line(int *line[])
+int ft_check_line(char *line[])
 {
 	int i;
 	int b;
@@ -25,7 +25,7 @@ int ft_check_line(int *line[])
 		{
 			if (i == b)
 				b++;
-			if (*line[i] == *line[b])
+			if (line[i] == line[b])
 				return (0);
 			b++;
 		}
@@ -34,7 +34,7 @@ int ft_check_line(int *line[])
 	return (1);
 }
 
-int ft_check_column(int *column[])
+int ft_check_column(char *column[])
 {
 	int i;
 	int b;
@@ -47,7 +47,7 @@ int ft_check_column(int *column[])
 		{
 			if (i == b)
 				b++;
-			if (*column[i] == *column[b])
+			if (column[i] == column[b])
 				return (0);
 			b++;
 		}
@@ -56,7 +56,7 @@ int ft_check_column(int *column[])
 	return (1);
 }
 
-int ft_check_block(int *block[])
+int ft_check_block(char *block[])
 {
 	int i;
 	int b;
@@ -69,7 +69,7 @@ int ft_check_block(int *block[])
 		{
 			if (i == b)
 				b++;
-			if (*block[i] == *block[b])
+			if (block[i] == block[b])
 				return (0);
 			b++;
 		}
