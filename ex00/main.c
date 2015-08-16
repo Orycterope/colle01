@@ -6,7 +6,7 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 20:01:16 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 21:40:20 by kguillot         ###   ########.fr       */
+/*   Updated: 2015/08/16 22:17:36 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ int		main(int argc, char *argv[])
 
 void	ft_error(void)
 {
-	ft_putstr("Error\n");
+	ft_putstr("Erreur\n");
 }
