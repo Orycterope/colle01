@@ -6,11 +6,11 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/16 15:17:30 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 15:54:11 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/16 17:42:33 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_precheck(int argc, char *argv[][])
+int	ft_precheck(int argc, char *argv[])
 {
 	int	lin;
 	int	col;
@@ -25,9 +25,9 @@ int	ft_precheck(int argc, char *argv[][])
 		col = 0;
 		while (col < 9)
 		{
-			if (*argv[lin][col] == '.')
-				*argv[lin][col] = '0';
-			else if (*argv[lin][col] < '0' || *argv[lin][col] > '9')
+			if (argv[lin][col] == '.')
+				argv[lin][col] = '0';
+			else if (argv[lin][col] < '0' || argv[lin][col] > '9')
 				return (0);
 			col++;
 		}

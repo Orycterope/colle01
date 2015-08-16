@@ -6,13 +6,17 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 20:01:16 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 17:08:47 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/16 17:43:47 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "string_utils.h"
+#include "grid.h"
+#include "main.h"
+#include "check.h"
+#include "precheck.h"
 
-int		fill_grid(t_grid *grid, int x, int y)
+int		fill_grid(struct s_grid *grid, int x, int y)
 /* remplie la grille par recurence
  * check a chaque fois si la nouvelle entrée est valide,
  * sinon passe a la suivante
@@ -34,20 +38,20 @@ int		fill_grid(t_grid *grid, int x, int y)
 		next_y++;
 	}
 	if (*(grid->lines[y][x]) != 0)
-		return (fill_grid(next_x, next_y));
+		return (fill_grid(grid, next_x, next_y));
 	value = 1;
 	while (value <= 9)
 	{
 		*(grid->lines[y][x]) = value;
 		if (ft_check_case(x, y, grid) == 1)
-			if (fill_grid(next_x, next_y) == 1)
+			if (fill_grid(grid, next_x, next_y) == 1)
 				return (1);
 		value++;
 	}
 	return (0);
 }
 
-int		main(argc, *argv[])
+int		main(int argc, char *argv[])
 /* check le nombre de parametres
  * appelle la fonction grid pour creer et remplir la grille avec les param
  * check le resultat de grid
@@ -56,9 +60,9 @@ int		main(argc, *argv[])
  * imprime la grille sur la sortie standard
  */
 {
-	t_grid	*grid;
+	struct s_grid	*grid;
 
-	if (ft_precheck(argc, argv == 0))
+	if (ft_precheck(argc, argv) == 0)
 	{
 		ft_error;
 		return (0);
@@ -73,7 +77,7 @@ int		main(argc, *argv[])
 	return (0);
 }
 
-void	ft_error()
+void	ft_error(void)
 {
 	ft_putstr("Error\n");
 }

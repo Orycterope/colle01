@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   string_utils.h                                     :+:      :+:    :+:   */
+/*   precheck.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/08/15 18:34:17 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 17:16:59 by tvermeil         ###   ########.fr       */
+/*   Created: 2015/08/16 17:35:45 by tvermeil          #+#    #+#             */
+/*   Updated: 2015/08/16 17:42:19 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifdef __STRING_UTILS__
-#	define __STRING_UTILS__ 
-#	include <unistd.h>
-	int		ft_putchar(char	c);
-	void	ft_putstr(char *str);
-	int		ft_strlen(char *str)
+
+#ifndef	__PRECHECK__
+#	define __PRECHECK__
+int	ft_precheck(int argc, char *argv[]);
 #endif

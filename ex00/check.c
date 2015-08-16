@@ -6,7 +6,7 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 20:14:24 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 15:38:10 by kguillot         ###   ########.fr       */
+/*   Updated: 2015/08/16 17:31:37 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int ft_check_case(int x, int y, t_grid *grid)
 	 */
 }
 
-int ft_check_all(t_grid *grid)
+int ft_check_all(struct s_grid *grid)
 {
 	/* check toute la grille en ceckant une a une toutes les lignes,
 	 * toutes les collonnes et tous les blocks
