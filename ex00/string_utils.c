@@ -6,7 +6,7 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 18:34:02 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/15 23:06:31 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/16 17:44:09 by kguillot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,24 @@ int		ft_strlen(char *str)
 	return (c + 1);
 }
 
-int		*ft_get_int_array_from_string(char *str)
+int		print_array(grid)
 {
-	/* retourne un tableau d'entier a partir de la string
-	 * transforme les points en 0,
-	 * verifie les caractères de la string
-	 * check si la ligne est valide avec ft_check_line
-	 * retourne 0 si il y a eu une erreur.
-	 */
+	int i;
+	int b;
+
+	i = 0;
+	b = 0;
+	while (i < 9)
+	{
+		while (b < 9)
+		{
+			write (1, &grid[i][b], 1);
+			write (1, " ", 1);
+			b++;
+		}
+		write (1, "\n", 1);
+		b = 0;
+		i++;
+	}
+	return (0);
 }
