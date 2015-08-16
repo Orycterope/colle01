@@ -6,7 +6,7 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 18:34:02 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 17:44:09 by kguillot         ###   ########.fr       */
+/*   Updated: 2015/08/16 18:00:02 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_strlen(char *str)
 	return (c + 1);
 }
 
-int		print_array(grid)
+int		ft_print_grid(struct s_grid *grid)
 {
 	int i;
 	int b;

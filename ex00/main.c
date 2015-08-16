@@ -6,7 +6,7 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 20:01:16 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 17:43:47 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/16 18:01:19 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ int		main(int argc, char *argv[])
 
 	if (ft_precheck(argc, argv) == 0)
 	{
-		ft_error;
+		ft_error();
 		return (0);
 	}
-	*grid = ft_create_grid(argv);
+	struct grid = ft_create_grid(argv);
 	if (fill_grid(0, 0, grid) == 0)
 	{
 		ft_error();
