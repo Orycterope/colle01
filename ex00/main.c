@@ -6,7 +6,7 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 20:01:16 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 19:29:11 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/16 21:19:56 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		fill_grid(struct s_grid *grid, int x, int y)
 	int next_x;
 	int next_y;
 	
-	printf("COORD : x : %d, y : %d\n", x, y);
+	//printf("COORD : x : %d, y : %d\n", x, y);
 	//ft_putchar('a');	
 	if (y == 9)
 		return (1);
@@ -42,19 +42,29 @@ int		fill_grid(struct s_grid *grid, int x, int y)
 	}
 	//ft_putchar('b');	
 	if (*(grid->lines[y][x]) != '0')
-		printf("-----------> occupied case : %c\n", *(grid->lines[y][x]));
+	{
+		//printf("-----------> occupied case : %c\n", *(grid->lines[y][x]));
 		return (fill_grid(grid, next_x, next_y));
+	}
 	//ft_putchar('c');	
 	value = '1';
 	while (value <= '9')
 	{
-		printf("--> COORD : x : %d, y : %d, value : %c\n", x, y, value);
+		//printf("--> COORD : x : %d, y : %d, value : %c\n", x, y, value);
 		*(grid->lines[y][x]) = value;
 		if (ft_check_case(x, y, grid) == 1)
+		{
+		//	printf("--> ok with value : %c\n", value);
 			if (fill_grid(grid, next_x, next_y) == 1)
+			{
+				printf("x : %d, y : %d REMONTE TRUE\n", x, y);
 				return (1);
+			}
+		}
 		value++;
 	}
+	*(grid->lines[y][x]) = '0';
+	printf("x : %d, y : %d REMONTE FALSE\n", x, y);
 	return (0);
 }
 

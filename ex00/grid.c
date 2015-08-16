@@ -6,7 +6,7 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 22:34:56 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 18:39:50 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/16 20:46:08 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void			ft_init_columns(char *lines_param[], struct s_grid *grid)
 		lin = 0;
 		while(lin < 9)
 		{
-			grid->columns[lin][col] = &(lines_param[col][lin + 1]);
+			grid->columns[col][lin] = &(lines_param[lin + 1][col]);
 			lin++;
 		}
 		col++;
