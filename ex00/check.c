@@ -6,7 +6,7 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 20:14:24 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 17:31:37 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/16 18:07:15 by tbarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,21 +78,14 @@ int ft_check_block(int *block[])
 	return (1);
 }
 
-int ft_check_case(int x, int y, t_grid *grid)
+int ft_check_case(int x, int y, struct s_grid *grid)
 {
-	if (ft_check_line(grid->line[x]) && ft_check_column(grid->column[y])
-				&& ft_check_block(grid->block[ft_get_block_of(x, y)]) == 1)
+	if (ft_check_line(grid->lines[x]) && ft_check_column(grid->columns[y])
+				&& ft_check_block(grid->blocks[ft_get_block_of(x, y)]) == 1)
 			return (1);
 	else
 		return (0);
 	/* check la colone, la ligne, et le block a partir du tableau de pointeur des valeurs dans la struct
 	 * retourne 0 si faux, 1 si vrai
-	 */
-}
-
-int ft_check_all(struct s_grid *grid)
-{
-	/* check toute la grille en ceckant une a une toutes les lignes,
-	 * toutes les collonnes et tous les blocks
 	 */
 }
