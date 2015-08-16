@@ -6,13 +6,13 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 18:34:02 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 20:46:26 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/16 21:37:06 by kguillot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "string_utils.h"
 
-void	ft_putchar(char	c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
@@ -52,11 +52,11 @@ void	ft_print_grid(struct s_grid *grid)
 	{
 		while (b < 9)
 		{
-			write (1, grid->lines[i][b], 1);
-			write (1, " ", 1);
+			write(1, grid->lines[i][b], 1);
+			write(1, " ", 1);
 			b++;
 		}
-		write (1, "\n", 1);
+		write(1, "\n", 1);
 		b = 0;
 		i++;
 	}
