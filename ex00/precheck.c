@@ -6,9 +6,11 @@
 /*   By: tvermeil <tvermeil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/16 15:17:30 by tvermeil          #+#    #+#             */
-/*   Updated: 2015/08/16 17:42:33 by tvermeil         ###   ########.fr       */
+/*   Updated: 2015/08/16 18:42:21 by tvermeil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "string_utils.h"
 
 int	ft_precheck(int argc, char *argv[])
 {
